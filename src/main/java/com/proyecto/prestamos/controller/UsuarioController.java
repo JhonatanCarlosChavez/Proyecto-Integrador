@@ -26,12 +26,12 @@ import com.proyecto.prestamos.services.RolServices;
 import com.proyecto.prestamos.services.UsuarioServices;
 
 //atributos de tipo sesion
-@SessionAttributes({"ENLACES","CODIGOUSUARIO"})
+//@SessionAttributes({"ENLACES","CODIGOUSUARIO"})
 
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping("/session")
+@RequestMapping("/sesion")
 public class UsuarioController {
 	
 	@Autowired

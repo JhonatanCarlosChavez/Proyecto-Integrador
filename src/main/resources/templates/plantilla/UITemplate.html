@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Plantilla</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<!--crear fragmento "cabecera" -->
+<div th:fragment="cabecera">
+		<div class="pos-f-t">
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+				  <div class="navbar-header">
+					   <div class="navbar-header">
+						 <a class="navbar-brand" href="#">SERPRODAT</a>
+						</div>
+				</div>
+			  <div class="collapse navbar-collapse">
+				   <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left: 30px;">
+						<li class="nav-item" th:each="bean:${session.ENLACES}">
+						  <a class="nav-link" 
+						  		th:text="${bean.descripcion}"
+						  		th:href="${bean.ruta}"></a>
+						</li>
+				
+				  </ul>
+				   
+				  <div class="navbar-nav ml-auto">
+					  <div class="flex" style="width:200px!important;padding-top: 10px;font-weight:bold ">
+			      		<span class="text-white">Usuario: </span><span class="text-white"></span>
+			      	  </div>
+					  <span class="nav-item nav-link"></span>  
+					  <form method="post" th:action="@{/logout}"> 
+								<input type="submit" class="btn btn-success" value="Cerrar sesión">
+					  </form>
+				  </div>
+			</div>
+			</nav>
+		</div>
+</div>
+
+
+
+	
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script   src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
+
+
+    
+
+    
+
