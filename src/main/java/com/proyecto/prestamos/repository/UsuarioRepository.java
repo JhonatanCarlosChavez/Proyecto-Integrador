@@ -10,10 +10,10 @@ import com.proyecto.prestamos.entity.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 	
-	@Query("select u from Usuario u where u.Login=?1")
+	@Query("select u from Usuario u where u.log=?1")
 	public Usuario iniciarSesion(String vLogin);
 	
-	@Query("select p from RolPermiso rp join rp.permiso p where rp.rol.nombre=?1")
+	@Query("select p from RolPermiso rp join rp.permiso p where rp.rol.descripcion=?1")
 	public List<Permiso> traerEnlacesDelUsuario(String desRol);
 
 }
