@@ -1,5 +1,6 @@
 package com.proyecto.prestamos.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class Usuario {
 	private String telefono;
 	
 	@Column(name="FechaRegistro")
-	private Date fecRegistro;
+	private LocalDate fecRegistro;
 	
 	@Column(name="Login")
 	private String log;
@@ -107,11 +108,11 @@ public class Usuario {
 		this.telefono = telefono;
 	}
 
-	public Date getFecRegistro() {
+	public LocalDate getFecRegistro() {
 		return fecRegistro;
 	}
 
-	public void setFecRegistro(Date fecRegistro) {
+	public void setFecRegistro(LocalDate fecRegistro) {
 		this.fecRegistro = fecRegistro;
 	}
 
