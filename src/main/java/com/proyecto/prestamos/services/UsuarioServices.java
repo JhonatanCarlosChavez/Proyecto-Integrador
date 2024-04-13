@@ -9,15 +9,20 @@ import com.proyecto.prestamos.entity.Usuario;
 import com.proyecto.prestamos.repository.UsuarioRepository;
 
 @Service
-public class UsuarioServices {
-	@Autowired
-	private UsuarioRepository repo;
+public interface UsuarioServices {
+	/** @Autowired
+	private UsuarioRepository repo; **/
 	
-	public List<Usuario> listarTodos(){
+	public abstract List<Usuario> listarTodos();
+	
+	
+	/**
+	 * public abstract List<Usuario> listarTodos(){
 		return repo.findAll();
 	}
+	 */
 	
-	public void registrar(Usuario u) {
+	/** public void registrar(Usuario u) {
 		repo.save(u);
 	}
 	
@@ -27,5 +32,5 @@ public class UsuarioServices {
 	
 	public void eliminar(Integer cod) {
 		repo.deleteById(cod);
-	}
+	} **/
 }
