@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.proyecto.prestamos.entity.Permiso;
 import com.proyecto.prestamos.entity.Usuario;
 import com.proyecto.prestamos.repository.UsuarioRepository;
 
@@ -28,4 +29,13 @@ public class UsuarioServices {
 	public void eliminar(Integer cod) {
 		repo.deleteById(cod);
 	}
+	
+	public Usuario sesionDelUsuario(String vLogin) {
+		return repo.iniciarSesion(vLogin);
+	}
+	
+	public List<Permiso> enlacesDelUsuario(String desRol){
+		return repo.traerEnlacesDelUsuario(desRol);
+	}
+	
 }
