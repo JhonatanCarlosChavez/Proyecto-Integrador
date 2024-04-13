@@ -30,8 +30,8 @@ public class UsuarioController {
 		return "login";
 	}
 	
-	//@RequestMapping("/intranet")
-	/*public String intranet(Authentication auth,Model model) {
+	/*//@RequestMapping("/intranet")
+	public String intranet(Authentication auth,Model model) {
 		//obtener nombre del rol del usuario que inicio sesiòn
 		String nomRol=auth.getAuthorities().stream()
 			      .map(GrantedAuthority::getAuthority)
