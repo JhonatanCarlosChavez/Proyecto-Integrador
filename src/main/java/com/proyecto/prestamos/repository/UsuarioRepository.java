@@ -14,6 +14,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 	public Usuario iniciarSesion(String vLogin);
 	
 	@Query("select p from RolPermiso rp join rp.permiso p where rp.rol.nombre=?1")
-	public List<Permiso> traerEnlacesDelUusario(String desRol);
+	public List<Permiso> traerEnlacesDelUsuario(String desRol);
 
 }
