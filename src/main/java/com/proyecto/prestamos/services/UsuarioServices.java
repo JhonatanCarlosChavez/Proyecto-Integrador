@@ -30,6 +30,10 @@ public class UsuarioServices {
 		repo.deleteById(cod);
 	}
 	
+	public Usuario buscarPorID(Integer cod) {
+		return repo.findById(cod).orElse(null);
+	}
+	
 	public Usuario sesionDelUsuario(String vLogin) {
 		return repo.iniciarSesion(vLogin);
 	}
