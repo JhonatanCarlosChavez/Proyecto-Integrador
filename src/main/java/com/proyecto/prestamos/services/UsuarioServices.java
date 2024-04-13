@@ -16,6 +16,9 @@ public interface UsuarioServices {
 	public abstract List<Usuario> listarTodos();
 	
 	
+	
+	
+	
 	/**
 	 * public abstract List<Usuario> listarTodos(){
 		return repo.findAll();
