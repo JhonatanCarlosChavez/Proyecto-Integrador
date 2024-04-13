@@ -30,19 +30,5 @@ public class UsuarioController {
 		return "login";
 	}
 	
-	//@RequestMapping("/intranet")
-	/*public String intranet(Authentication auth,Model model) {
-		//obtener nombre del rol del usuario que inicio sesiòn
-		String nomRol=auth.getAuthorities().stream()
-			      .map(GrantedAuthority::getAuthority)
-			      .collect(Collectors.joining(","));
-		
-		//
-		List<Enlace> lista=servicioUsu.enlaceDelUsuario(nomRol);
-		Usuario u=servicioUsu.sesionUsuario(auth.getName());
-		model.addAttribute("CODIGOUSUARIO",u.getCodigo());
-		model.addAttribute("ENLACES", lista);
-		return "intranet";
-	} */
 
 }
