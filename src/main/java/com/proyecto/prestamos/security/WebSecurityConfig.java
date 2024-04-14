@@ -23,7 +23,7 @@ public class WebSecurityConfig {
 		http
 			.authorizeHttpRequests((requests) -> requests
 				.requestMatchers("/sesion/**","resources/**").permitAll()
-				.requestMatchers("/registro/**")
+				.requestMatchers("/registro/**", "/inversionista/**", "/prestamista/**")
 				.authenticated()
 			)
 			.formLogin((form) -> form

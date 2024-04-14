@@ -20,7 +20,7 @@ public class Rol {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="idRol")
 	private Integer codigo ;
-	private String descripcion;
+	private String nombre;
 	@JsonIgnore
 	@OneToMany(mappedBy = "rol")
 	private List<Usuario> listaUsuario;
@@ -34,10 +34,10 @@ public class Rol {
 		this.codigo = codigo;
 	}
 	public String getDescripcion() {
-		return descripcion;
+		return nombre;
 	}
 	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+		this.nombre = descripcion;
 	}
 	public List<Usuario> getListaUsuario() {
 		return listaUsuario;

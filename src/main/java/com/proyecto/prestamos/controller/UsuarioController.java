@@ -29,8 +29,8 @@ import com.proyecto.prestamos.services.UsuarioServices;
 //@SessionAttributes({"ENLACES","CODIGOUSUARIO"})
 
 
-@CrossOrigin(origins = {"http://localhost:4200"})
-@RestController
+//@CrossOrigin(origins = {"http://localhost:4200"})
+@Controller
 @RequestMapping("/sesion")
 public class UsuarioController {
 	
