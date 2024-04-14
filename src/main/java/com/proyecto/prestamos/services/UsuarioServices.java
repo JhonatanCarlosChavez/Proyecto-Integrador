@@ -9,11 +9,14 @@ import com.proyecto.prestamos.entity.Permiso;
 import com.proyecto.prestamos.entity.Usuario;
 import com.proyecto.prestamos.repository.UsuarioRepository;
 
+
+
 @Service
-public class UsuarioServices {
+public class UsuarioServices  {
 	@Autowired
 	private UsuarioRepository repo;
 	
+
 	public List<Usuario> listarTodos(){
 		return repo.findAll();
 	}
@@ -41,5 +44,7 @@ public class UsuarioServices {
 	public List<Permiso> enlacesDelUsuario(String desRol){
 		return repo.traerEnlacesDelUsuario(desRol);
 	}
+
+	
 	
 }
