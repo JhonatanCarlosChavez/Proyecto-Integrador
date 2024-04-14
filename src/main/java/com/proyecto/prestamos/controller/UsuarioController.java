@@ -29,90 +29,20 @@ import com.proyecto.prestamos.services.UsuarioServices;
 //@SessionAttributes({"ENLACES","CODIGOUSUARIO"})
 
 
-@CrossOrigin(origins = {"http://localhost:4200"})
-@RestController
+//@CrossOrigin(origins = {"http://localhost:4200"})
+//@RestController
+@Controller
 @RequestMapping("/sesion")
 public class UsuarioController {
 	
 	@Autowired
 	private UsuarioServices servicioUsu;
 	
-	private GrupoServices servicioGrupo;
-	
-	private RolServices servicioRol;
 	
 	@RequestMapping("/login")
 	public String login() {
 		return "login";
 	}
-	
-	@RequestMapping("/grabar")
-	public String grabar(@RequestParam("codigo")Integer cod,
-			@RequestParam("nombre")String nom,
-			@RequestParam("apellido")String ape,
-			@RequestParam("dni")String dni,
-			@RequestParam("correo")String corr,
-			@RequestParam("telefono")String tel,
-			@RequestParam("fec")String fec,
-			@RequestParam("log")String log,
-			@RequestParam("pass")String pas,
-			@RequestParam("rol")Integer codl,
-			@RequestParam("grupo")Integer codg,
-			RedirectAttributes redirect) {
-		
-		try {
-			
-			Usuario usu = new Usuario();
-			usu.setNombre(nom);
-			usu.setApellido(ape);
-			usu.setDni(dni);
-			usu.setCorreo(corr);
-			usu.setTelefono(tel);
-			usu.setFecRegistro(LocalDate.parse(fec));
-			usu.setLog(log);
-			usu.setPass(pas);
-			
-			Rol rol=new Rol();
-			rol.setCodigo(codl);
-			
-			Grupo gr=new Grupo();
-			gr.setCodigo(codg);
-			
-			if(cod==0) {
-				servicioUsu.registrar(usu);
-				redirect.addFlashAttribute("MENSAJE","Usuario registrado");
-			}
-			else {
-				usu.setCodigo(cod);
-				servicioUsu.actualizar(usu);
-				redirect.addFlashAttribute("MENSAJE","Usuario actualizado");
-			}
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		
-		}
-		return "redirect:/usuario/lista";
-			
-	}	
-	
-	//Comentario
-	
-			
-	@RequestMapping("/consultaPorID")
-	@ResponseBody
-	public Usuario consultaPorID(@RequestParam("codigo") Integer cod){
-		return servicioUsu.buscarPorID(cod);
-	}
-	
-	@RequestMapping("/eliminarPorID")
-	public String eliminarPorID(@RequestParam("codigo") Integer cod,
-								RedirectAttributes redirect) {
-		servicioUsu.eliminar(cod);
-		redirect.addFlashAttribute("MENSAJE","Usuario eliminado");
-		return "redirect:/Usuario/lista";
-	}
-	
 	
 	
 	
