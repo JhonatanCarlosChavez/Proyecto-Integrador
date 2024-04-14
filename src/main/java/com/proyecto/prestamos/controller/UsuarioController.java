@@ -29,8 +29,6 @@ import com.proyecto.prestamos.services.UsuarioServices;
 //@SessionAttributes({"ENLACES","CODIGOUSUARIO"})
 
 
-//@CrossOrigin(origins = {"http://localhost:4200"})
-//@RestController
 @Controller
 @RequestMapping("/sesion")
 public class UsuarioController {
@@ -43,8 +41,6 @@ public class UsuarioController {
 	public String login() {
 		return "login";
 	}
-	
-	
 	
 	/*//@RequestMapping("/intranet")
 	public String intranet(Authentication auth,Model model) {
