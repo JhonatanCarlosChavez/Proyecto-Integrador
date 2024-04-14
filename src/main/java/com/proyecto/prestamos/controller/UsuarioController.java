@@ -95,6 +95,9 @@ public class UsuarioController {
 		return "redirect:/usuario/lista";
 			
 	}	
+	
+	//Comentario
+	
 			
 	@RequestMapping("/consultaPorID")
 	@ResponseBody
